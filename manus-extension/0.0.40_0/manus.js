@@ -1,0 +1,1 @@
+import{e as o}from"./sendMessage.js";function a(e){const{webAppDomain:r}=o.getEnvParams();if(e===r)return!0;if(o.isDev())try{const t=new URL(e),n=t.hostname==="localhost"||t.hostname==="127.0.0.1"||t.hostname==="::1";if(t.protocol==="http:"&&n)return!0}catch{return!1}return!1}export{a as i};

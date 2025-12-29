@@ -1,0 +1,1 @@
+function e(o){return s=>{if(!s||typeof s!="object")return!1;const n=s;return n.source===o&&typeof n.type=="string"}}const t=e("sidepanel"),a=e("content"),u=e("popup"),c=e("background"),p=e("manus-app"),r=e("background");export{a,p as b,u as c,t as d,r as e,c as i};

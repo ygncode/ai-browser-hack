@@ -1,0 +1,53 @@
+{
+   "action": {
+      "default_icon": {
+         "128": "icons/128.png",
+         "16": "icons/16.png",
+         "32": "icons/32.png",
+         "48": "icons/48.png"
+      },
+      "default_popup": "src/popup.html",
+      "default_title": "Manus Chrome Operator"
+   },
+   "background": {
+      "service_worker": "service-worker-loader.js",
+      "type": "module"
+   },
+   "content_scripts": [ {
+      "js": [ "assets/content.ts-loader.js" ],
+      "matches": [ "\u003Call_urls>" ],
+      "run_at": "document_start"
+   }, {
+      "all_frames": false,
+      "js": [ "assets/ManusAppBridge.ts-loader.js" ],
+      "matches": [ "https://manus.im/*", "https://vida.butterfly-effect.dev/*", "http://localhost/*", "http://127.0.0.1/*", "http://localhost:3000/*" ],
+      "run_at": "document_start"
+   } ],
+   "custom_meta": {
+      "author": "Manus AI",
+      "buildTime": "2025-12-23 19:45:31"
+   },
+   "description": "Connect your browser to Manus Agent and let it help you complete everyday tasks that require your personal context.",
+   "host_permissions": [ "\u003Call_urls>" ],
+   "icons": {
+      "128": "icons/128.png",
+      "16": "icons/16.png",
+      "32": "icons/32.png",
+      "48": "icons/48.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAzj4skCQo+dPoRbDLQPb7iJtqSlXE6wJKyHQNYSHcvp/Tgz4SS0BOjokgXkDhkAdAmgcPCe4VBUpw62migKudt1tq/hQx2klrPE7fJz3tJcJAQOqkDsQ/gXUZYQp81VYl9m8YI/Mh4mlTh1+gL+aExTz1075O7McIgBEg2fKIkZzPW+Tj2QqEhNHoc+WTAGT9B81UEuF7x3f8XcFmEGdimcshYB1PNm4fGnXJRTj5pNJfn1ZSje4EWMSNlSEKqiTgskkKVuYjdB3yNys+AhQWgRjgLIQZA7BQ0uMjvhYNS5DAzid42vLZ7N1u1QGvPCdYOyaCsuzzhGhXVUSyb83fGwIDAQAB",
+   "manifest_version": 3,
+   "name": "Manus AI Browser Operator",
+   "permissions": [ "tabs", "tabGroups", "storage", "debugger", "cookies", "scripting" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "0.0.40",
+   "web_accessible_resources": [ {
+      "matches": [ "\u003Call_urls>" ],
+      "resources": [ "assets/*", "sendMessage.js", "typeGuards.js", "content.ts.js" ],
+      "use_dynamic_url": false
+   }, {
+      "matches": [ "http://127.0.0.1/*", "http://localhost/*", "http://localhost:3000/*", "https://manus.im/*", "https://vida.butterfly-effect.dev/*" ],
+      "resources": [ "sendMessage.js", "manus.js", "ManusAppBridge.ts.js" ],
+      "use_dynamic_url": false
+   } ]
+}
