@@ -1,0 +1,3 @@
+[submodule "ai-browser-controller"]
+	path = ai-browser-controller
+	url = git@github.com:ygncode/ai-browser-controller.git
